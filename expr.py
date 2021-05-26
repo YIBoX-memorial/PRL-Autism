@@ -75,6 +75,13 @@ def proc(win, num_trials=80, reversal=40, init_ans='blue', ac_ratio=0.8):
         return 'blue'
     num_ac = 0
 
+    instruction = visual.TextStim(win, text='Please type \'b\' if you choose blue lines\n and \'y\' if you choose yellow lines,\n CTRL + Q to quit.')
+    instruction.draw()
+    win.flip()
+    core.wait(10)
+    win.flip()
+
+
     rect = build_rect(win, anchor_rect, ext_rect)
     img_ac = visual.ImageStim(win, image=path+'ac.png', size=(0.1,0.13))
     img_wa = visual.ImageStim(win, image=path+'wa.png', size=(0.1,0.13))
